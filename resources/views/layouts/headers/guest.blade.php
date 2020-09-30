@@ -1,10 +1,12 @@
 <div class="header bg-gradient-primary py-7 py-lg-8">
     <div class="container">
-        <div class="header-body text-center mb-3">
+        <div class="header-body text-center mb-5">
             <div class="row justify-content-center">
-                <div class="col-lg-5 col-md-6">
+                <div class="col-lg-5 col-md-4">
                     <h1 class="text-white">{{ __('Faça seu Login') }}</h1>
                 </div>
+                
+                
             </div>
         </div>
     </div>

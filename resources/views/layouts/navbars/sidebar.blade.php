@@ -6,7 +6,7 @@
         </button>
         <!-- Brand -->
         <a class="navbar-brand pt-0" href="{{ route('home') }}">
-            <img src="{{ asset('argon') }}/img/logo-home-side.png" class="navbar-brand-img" alt="...">
+            <img src="{{ asset('argon') }}/img/fortplay.png" class="navbar-brand-img" alt="...">
         </a>
         <!-- User -->
         
@@ -17,7 +17,7 @@
                 <div class="row">
                     <div class="col-6 collapse-brand">
                         <a href="{{ route('home') }}">
-                            <img src="{{ asset('argon') }}/img/logo-home-side.png">
+                            <img src="{{ asset('argon') }}/img/fortplay.png">
                         </a>
                     </div>
                     <div class="col-6 collapse-close">
@@ -29,22 +29,19 @@
                 </div>
             </div>
             <!-- Form -->
-            <form class="mt-4 mb-3 d-md-none">
-                <div class="input-group input-group-rounded input-group-merge">
-                    <input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="{{ __('Pesquisar') }}" aria-label="Search">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">
-                            <span class="fa fa-search"></span>
-                        </div>
-                    </div>
-                </div>
-            </form>
+           
             <!-- Navigation -->
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('home') }}">
-                        <i class="ni ni-tv-2 text-primary"></i> {{ __('Início') }}
+                        <i class="ni ni-tv-2 text-primary"></i> {{ __('Início/Atualizar') }}
                     </a>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('users.index') }}">
+                            <i class="ni ni-circle-08 text-info"></i> {{ __('Gerenciar Usuários') }}
+                        </a>
+                    </li>
 
                     <a class="nav-link" href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">

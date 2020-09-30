@@ -50,6 +50,13 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
+
+        if ($exception instanceof \Spatie\Permission\Exceptions\UnauthorizedException) {
+        
+        return response()->json(['O seu usuário não tem permissão para acessar esta página.']);
+        
+        }
+
         return parent::render($request, $exception);
     }
 }
