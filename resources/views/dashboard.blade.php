@@ -58,10 +58,10 @@
                             <div class="col text-right">
                                 <td>
                                                    
-                                                   
-                                    <form action="">
+                                              
+                                    <form action="{{ route('aplicativos.create') }}">
                                         
-                                        <button type="submit" class="btn btn-success">Adcionar Novo</button>
+                                        <button type="submit" class="btn btn-success">Cadastrar Novo</button>
                                     </form>
                                 </td>
                               
@@ -81,43 +81,40 @@
                             </thead>
 
                             <tbody>
-                        
+                                @foreach ($aplicativos as $aplicativo)
+
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>
+                                        @if ($aplicativo->image)
+                                            <img src="{{ url("storage/{$aplicativo->image}") }}" alt="{{ $aplicativo->nome }}" style="max-width: 100px;">
+                                        @endif 
+                                    </td>
+                                    <td>{{ $aplicativo->nome }}</td>
+                                    <td>{{ $aplicativo->package }}</td>
+                                    <td>{{ $aplicativo->link }}</td>
 
                                     <td>
-                                    
-                                        </td>
-                                        <td>
-                                             <form action="">
-                                               
-                                                
-                                                <button type="submit" class="btn btn-success">Editar</button>
-                                            </form>
-                                            <br>
-                                            <form action="" >
-                                               
-                                               
-                                                <button type="submit" class="btn btn-danger">Deletar</button>
-                                            </form>
-                                        </td>
-                                    </tr> 
-                                
+                                        <form action="{{ route('aplicativos.edit', $aplicativo->id) }}">
+                                           @csrf
+                                           
+                                           <button type="submit" class="btn btn-success btn-sm">Editar</button>
+                                       </form>
+                                       <br>
+                                       <form action="{{ route('aplicativos.destroy', $aplicativo->id) }}" method="post">
+                                           @csrf
+                                           @method('DELETE')
+                                           <button type="submit" class="btn btn-danger btn-sm">Deletar</button>
+                                       </form>
+                                   </td>
+                                @endforeach
                             </tbody>
-                        </table>
-                        
+                        </table>    
                     </div> 
                 </div>
             </div>
         </div>
     </div>
 </div>
-</div>
+<br>
 @endsection
 
-@push('js')
-    <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
-    <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
-@endpush

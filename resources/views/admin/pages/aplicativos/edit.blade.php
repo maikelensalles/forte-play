@@ -8,11 +8,11 @@
                 <div class="col">
                     <div class="card shadow">
                         <div class="card-header border-0">
-                            <h1>Editar Produto {{ $produto->nome }}</h1>
+                            <h1>Editar Aplicativo {{ $aplicativo->nome }}</h1>
 
-                            <form action="{{ route('products.update', $produto->id) }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('aplicativos.update', $aplicativo->id) }}" method="post" enctype="multipart/form-data">
                                     @method('PUT')
-                                    @include('admin.pages.products.reuses.form')   
+                                    @include('admin.pages.aplicativos.reuses.form')   
                             </form>
                         </div>
                     </div>
