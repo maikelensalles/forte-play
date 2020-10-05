@@ -39,6 +39,10 @@
                         <i class="ni ni-tv-2 text-danger"></i> {{ __('Aplicativos') }}
                     </a>
 
+                    <a class="nav-link" href="{{ route('mensagens.index') }}">
+                        <i class="ni ni-chat-round text-danger"></i> {{ __('Mensagens') }}
+                    </a>
+
                     <a class="nav-link" href="{{ route('users.index') }}">
                         <i class="ni ni-support-16 text-danger"></i> {{ __('Suporte Técnico') }}
                     </a>
