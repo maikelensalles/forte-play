@@ -8,6 +8,10 @@
             <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
             
                 <div class="container-fluid">
+                    <a type="button" class="btn btn-success" style="margin-bottom: 15px" href="/users" >
+                        <i class="fa fa-refresh"></i>
+                        Recarregar
+                    </a>
                     <div class="header-body">
                         <div class="row">
                             <div class="col">
@@ -21,10 +25,10 @@
                                                 <td>
                                                    
                                                    
-                                                   <form action="{{ route('users.create') }}">
+                                                   {{-- <form action="{{ route('users.create') }}">
                                                        
                                                        <button type="submit" class="btn btn-success">Criar Usuário</button>
-                                                   </form>
+                                                   </form> --}}
                                                </td>
                                               
                                             </div>
@@ -35,37 +39,37 @@
                                             <thead class="thead-light">
                                                 <tr>
                                                     <th>Nome</th>
-                                                    <th>Email</th>
-                                                    <th>Função</th>
-                                                    <th>Ação</th>
+                                                    <th>ID Acesso</th>
+                                                    <th>Telefone</th>
+                                                    <th>Aplicativo Usado</th>
+                                                    <th>Hora</th>
+                                                    <th>Data</th>
+                                                    {{-- <th>Ação</th> --}}
                                                 </tr>
                                             </thead>
             
                                             <tbody>
-                                                @foreach ($data as $key => $user)
+                                                @foreach ($cliente as $c)
                                                 <tr>
-                                                    <td>{{ $user->name }}</td>
-                                                    <td>{{ $user->email }}</td>
-                                                    <td>
-                                                        @if(!empty($user->getRoleNames()))
-                                                        @foreach($user->getRoleNames() as $v)
-                                                        <label class="badge badge-success">{{ $v }}</label>
-                                                        @endforeach
-                                                        @endif
-                                                        </td>
-                                                        <td>
+                                                    <td>{{ $c->nome }}</td>
+                                                    <td>{{ $c->login }}</td>
+                                                    <td><a href="https://api.whatsapp.com/send?phone=55{{ $c->telefone }}">{{ $c->telefone }}</a></td>
+                                                    <td>{{ $c->aplicativo }}</td>
+                                                    <td>{{ date( 'H:i' , strtotime($c->created_at)) }}</td>
+                                                    <td>{{ date( 'd/m/Y' , strtotime($c->created_at)) }}</td>
+                                                        {{-- <td>
                                                              <form action="{{ route('users.edit',$user->id) }}">
                                                                 @csrf
                                                                 
                                                                 <button type="submit" class="btn btn-success">Editar</button>
                                                             </form>
                                                             <br>
-                                                            <form action="{{ route('users.destroy', $user->id) }}" method="post">
+                                                            <form action="{{ route('users.destroy', $c->id) }}" method="post">
                                                                 @csrf
                                                                 @method('DELETE')
                                                                 <button type="submit" class="btn btn-danger">Deletar</button>
                                                             </form>
-                                                        </td>
+                                                        </td> --}}
                                                     </tr> 
                                                 @endforeach
                                             </tbody>

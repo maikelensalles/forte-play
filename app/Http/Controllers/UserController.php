@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Spatie\Permission\Models\Role;
 use App\Models\User;
+use App\Models\Cliente;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 
@@ -18,6 +19,7 @@ class UserController extends Controller
         $this->middleware('permission:role-edit', ['only' => ['edit','update']]);
         $this->middleware('permission:role-delete', ['only' => ['destroy']]);
     }
+    
     /**
      * Display a listing of the users
      *
@@ -26,9 +28,10 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
+        $cliente = Cliente::orderBy('id', 'DESC')->paginate();
         $data = User::orderBy('id','DESC')->paginate(5);
 
-        return view('users.index',compact('data'))
+        return view('users.index',compact('cliente'),)
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }    
 
@@ -37,7 +40,6 @@ class UserController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
-
     public function create()
     {
         $roles = Role::pluck('name','name')->all();

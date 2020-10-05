@@ -5,7 +5,7 @@
 
     <div class="container mt--8 pb-5">
         <div class="row justify-content-center">
-            <div class="col-lg-5 col-md-7">
+            <div class="col-lg-5 col-md-7" style="text-align: center">
                 <div class="card bg-secondary shadow border-0">
                     
                     <div class="card-body px-lg-5 py-lg-5">
@@ -62,6 +62,8 @@
                         </form>
                     </div>
                 </div>
+                <br>
+                <a href="https://homecompany.site" style="font-size: 15px; text-align: center; color: #FA0E10">Por Home Company</a>
             </div>
         </div>
     </div>

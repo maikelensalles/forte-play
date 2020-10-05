@@ -8,6 +8,7 @@
         <a class="navbar-brand pt-0" href="{{ route('home') }}">
             <img src="{{ asset('argon') }}/img/fortplay.png" class="navbar-brand-img" alt="...">
         </a>
+        <a href="https://homecompany.site" style="font-size: 13px; text-align: center; color: #FA0E10">Por Home Company</a>
         <!-- User -->
         
         <!-- Collapse -->
@@ -33,19 +34,18 @@
             <!-- Navigation -->
             <ul class="navbar-nav">
                 <li class="nav-item">
+
                     <a class="nav-link" href="{{ route('home') }}">
-                        <i class="ni ni-tv-2 text-primary"></i> {{ __('Início/Atualizar') }}
+                        <i class="ni ni-tv-2 text-danger"></i> {{ __('Aplicativos') }}
                     </a>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('users.index') }}">
-                            <i class="ni ni-circle-08 text-info"></i> {{ __('Gerenciar Usuários') }}
-                        </a>
-                    </li>
+                    <a class="nav-link" href="{{ route('users.index') }}">
+                        <i class="ni ni-support-16 text-danger"></i> {{ __('Suporte Técnico') }}
+                    </a>
 
                     <a class="nav-link" href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
-                        <i class="ni ni-user-run text-primary"></i> {{ __('Sair') }}
+                        <i class="ni ni-button-power text-danger"></i> {{ __('Sair') }}
                     </a>
                 </li>
             </ul>

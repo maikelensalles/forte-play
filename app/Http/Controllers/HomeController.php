@@ -31,7 +31,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $aplicativos = Aplicativo::first()->paginate();
+        $aplicativos = Aplicativo::all();
 
         return view('dashboard', [
             'aplicativos' => $aplicativos,
