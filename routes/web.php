@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('aplicativos', 'HomeController')->middleware('auth');
 Route::resource('mensagens', 'MensagemController')->middleware('auth');
+Route::resource('afiliados', 'AfiliadoController')->middleware('auth');
 
 Route::get('/login', function () {
     return 'Login';

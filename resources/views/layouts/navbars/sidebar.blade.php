@@ -47,6 +47,10 @@
                         <i class="ni ni-support-16 text-danger"></i> {{ __('Suporte Técnico') }}
                     </a>
 
+                    <a class="nav-link" href="{{ route('afiliados.index') }}">
+                        <i class="ni ni-building text-danger"></i> {{ __('Trabalhe Conosco') }}
+                    </a>
+
                     <a class="nav-link" href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
                         <i class="ni ni-button-power text-danger"></i> {{ __('Sair') }}
