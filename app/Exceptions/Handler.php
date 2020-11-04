@@ -52,8 +52,9 @@ class Handler extends ExceptionHandler
     {
 
         if ($exception instanceof \Spatie\Permission\Exceptions\UnauthorizedException) {
-        
-        return response()->json(['O seu usuário não tem permissão para acessar esta página.']);
+         
+        return redirect()->route('users.index')
+            ->with( 'warning', 'O seu usuário não tem permissão para acessar esta página!'); 
         
         }
 

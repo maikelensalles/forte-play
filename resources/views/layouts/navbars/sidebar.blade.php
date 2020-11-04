@@ -43,12 +43,16 @@
                         <i class="ni ni-chat-round text-danger"></i> {{ __('Mensagens') }}
                     </a>
 
-                    <a class="nav-link" href="{{ route('users.index') }}">
+                    <a class="nav-link" href="{{ route('clientes.index') }}">
                         <i class="ni ni-support-16 text-danger"></i> {{ __('Suporte Técnico') }}
                     </a>
 
                     <a class="nav-link" href="{{ route('afiliados.index') }}">
                         <i class="ni ni-building text-danger"></i> {{ __('Trabalhe Conosco') }}
+                    </a>
+                    
+                    <a class="nav-link" href="{{ route('users.index') }}">
+                        <i class="ni ni-circle-08 text-danger"></i> {{ __('Gerenciar Usuários') }}
                     </a>
 
                     <a class="nav-link" href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();

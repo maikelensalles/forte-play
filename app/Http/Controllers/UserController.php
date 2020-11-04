@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Spatie\Permission\Models\Role;
 use App\Models\User;
-use App\Models\Cliente;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 
@@ -26,12 +25,11 @@ class UserController extends Controller
      * @param  \App\User  $model
      * @return \Illuminate\View\View
      */
-    public function index(Request $request)
+    public function index(Request $request, User $model)
     {
-        $cliente = Cliente::orderBy('id', 'DESC')->paginate();
         $data = User::orderBy('id','DESC')->paginate(5);
 
-        return view('users.index',compact('cliente'),)
+        return view('users.index',compact('data'),)
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }    
 
